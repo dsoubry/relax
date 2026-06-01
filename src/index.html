@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="nl" data-theme="evening">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B132B" />
+  <title>Dynamic Relaxation PWA</title>
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" id="phaseLabel">Goedenavond</p>
+        <h1 id="trackTitle">Night Drift</h1>
+        <p class="subtitle" id="trackSubtitle">Diepe bassen · Piano · Donder</p>
+      </div>
+      <button class="icon-button" id="settingsButton" aria-label="Instellingen">☰</button>
+    </header>
+
+    <section class="mood-section" aria-labelledby="moodTitle">
+      <p id="moodTitle" class="section-label">Hoe voel je je?</p>
+      <div class="mood-row" id="moodRow"></div>
+    </section>
+
+    <section class="visual-section" aria-label="Soundvisual en ademhaling">
+      <canvas id="visualizer" width="640" height="640"></canvas>
+      <div class="breath-ring" aria-hidden="true"></div>
+      <p class="breath-label" id="breathLabel">Adem in</p>
+    </section>
+
+    <section class="player-section" aria-label="Audio controls">
+      <div class="transport">
+        <button class="transport-button" id="previousButton" aria-label="Vorige track">⏮</button>
+        <button class="play-button" id="playButton" aria-label="Afspelen of pauzeren">▶</button>
+        <button class="transport-button" id="nextButton" aria-label="Volgende track">⏭</button>
+      </div>
+
+      <label class="volume-row">
+        <span>🔈</span>
+        <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.65" />
+        <span>🔊</span>
+      </label>
+
+      <div class="bottom-actions">
+        <button class="pill-button" id="timeTravelButton">↺ Time Travel</button>
+        <button class="pill-button" id="sleepTimerButton">☾ Slaaptimer uit</button>
+        <button class="pill-button" id="moreButton">•••</button>
+      </div>
+    </section>
+
+    <aside class="timer-panel" id="timerPanel" hidden>
+      <p class="section-label">Slaaptimer</p>
+      <div class="timer-grid">
+        <button data-minutes="15">15 min</button>
+        <button data-minutes="30">30 min</button>
+        <button data-minutes="45">45 min</button>
+        <button data-minutes="60">60 min</button>
+      </div>
+    </aside>
+  </main>
+
+  <audio id="audioPlayer" crossorigin="anonymous"></audio>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
