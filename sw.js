@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dynamic-relax-pwa-v1';
+const CACHE_NAME = 'dynamic-relax-pwa-v2';
 const CORE_ASSETS = [
   './',
   './src/index.html',
